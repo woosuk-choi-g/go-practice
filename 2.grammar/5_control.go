@@ -29,4 +29,15 @@ func main() {
 	if err := ioutil.WriteFile("5_controll.txt", []byte(str), 0644); err != nil {
 		fmt.Println(err)
 	}
+
+	switch i {
+	case 0, 1:
+		fmt.Println("A")
+	case 2, 3, 4:
+		fmt.Println("B")
+	case 5:
+		fmt.Println("C")
+	default:
+		fmt.Println("D")
+	}
 }
