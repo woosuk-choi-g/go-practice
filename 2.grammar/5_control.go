@@ -4,11 +4,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"math/rand"
-	"time"
+	// "time"
 )
 
 func main() {
-	rand.Seed(time.Now().Unix()) // rand seed 는 매번 다른 값을 주지 않으면 결과가 동일함
+	// rand.Seed(time.Now().Unix()) // rand seed 는 매번 다른 값을 주지 않으면 결과가 동일함
+	// Go 1.20 부터는 Seed 를 호출하지않아도 됨
 	i := rand.Intn(15)
 
 	fmt.Println(i)
@@ -23,6 +24,8 @@ func main() {
 	
 	// if condition
 	str := "Hello world!"
+	// ioutil.WriteFile is deprecated: As of Go 1.16, this function simply calls [os.WriteFile].deprecated(default)
+	// if err := os.WriteFile("5_controll.txt", []byte(str), 0644); err != nil {
 	if err := ioutil.WriteFile("5_controll.txt", []byte(str), 0644); err != nil {
 		fmt.Println(err)
 	}
